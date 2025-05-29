@@ -161,7 +161,7 @@ To gain further insight into flight delays, we visualized key relationships and 
 
 ### **Figure 1: Departure Delay by Time of Day**
 
-![Departure Delay by Time of Day](outputs/indir%20(1).png)
+![Departure Delay by Time of Day](outputs/indir%20(3).png)
 
 This line chart shows how departure delays vary throughout the day.
 
@@ -171,7 +171,7 @@ This line chart shows how departure delays vary throughout the day.
 
 ### **Figure 2: Top 10 Departure Cities by Avg Delay**
 
-![Top Delay Cities](outputs/indir%20(2).png)
+![Top Delay Cities](outputs/indir%20(10).png)
 
 This horizontal bar chart displays the top cities with the highest average departure delay.
 
@@ -181,7 +181,7 @@ This horizontal bar chart displays the top cities with the highest average depar
 
 ### **Figure 3: Average Delay Duration by Cause**
 
-![Delay Causes](outputs/indir%20(3).png)
+![Delay Causes](outputs/indir%20(5).png)
 
 This bar chart compares the average delay times attributed to various causes.
 
@@ -191,7 +191,7 @@ This bar chart compares the average delay times attributed to various causes.
 
 ### **Figure 4: Average Departure Delay by Precipitation Level**
 
-![Weather Impact](outputs/indir%20(4).png)
+![Weather Impact](outputs/indir%20(9).png)
 
 This chart examines the relationship between precipitation levels and departure delay.
 
@@ -201,7 +201,7 @@ This chart examines the relationship between precipitation levels and departure 
 
 ### **Figure 5: Average Delay Components by Top 10 Airports**
 
-![Airport Delay Breakdown](outputs/indir%20(5).png)
+![Airport Delay Breakdown](outputs/indir%20(11).png)
 
 A grouped bar chart shows delays by type at the busiest airports.
 
@@ -211,7 +211,7 @@ A grouped bar chart shows delays by type at the busiest airports.
 
 ### **Figure 6: Average Departure Delay vs. Flight Volume**
 
-![Delay vs Flight Volume](outputs/indir%20(6).png)
+![Delay vs Flight Volume](outputs/indir%20(4).png)
 
 This scatter plot shows average delays against number of flights per airport.
 
@@ -221,7 +221,7 @@ This scatter plot shows average delays against number of flights per airport.
 
 ### **Figure 7: Diverted Flight Rate**
 
-![Diverted Flights Pie](outputs/indir%20(7).png)
+![Diverted Flights Pie](outputs/indir%20(1).png)
 
 This pie chart illustrates the percentage of diverted flights.
 
@@ -231,7 +231,7 @@ This pie chart illustrates the percentage of diverted flights.
 
 ### **Figure 8: Average Departure Delay by Airline**
 
-![Airline Delays](outputs/indir%20(8).png)
+![Airline Delays](outputs/indir%20(2).png)
 
 This bar chart compares delay averages across major airlines.
 
@@ -241,7 +241,7 @@ This bar chart compares delay averages across major airlines.
 
 ### **Figure 9: Daily Average Departure Delay Trend**
 
-![Daily Delay Trend](outputs/indir%20(9).png)
+![Daily Delay Trend](outputs/indir%20(6).png)
 
 This time series tracks daily average delay fluctuations across the year.
 
@@ -251,7 +251,7 @@ This time series tracks daily average delay fluctuations across the year.
 
 ### **Figure 10: Departure Delay by Distance Category**
 
-![Distance Delay Boxplot](outputs/indir%20(10).png)
+![Distance Delay Boxplot](outputs/indir%20(7).png)
 
 A box plot of departure delay segmented by flight distance.
 
@@ -261,7 +261,7 @@ A box plot of departure delay segmented by flight distance.
 
 ### **Figure 11: Top 10 Airports with Long Delays During Heavy Rain**
 
-![Heavy Rain Delays](outputs/indir%20(11).png)
+![Heavy Rain Delays](outputs/indir%20(8).png)
 
 This bar chart ranks airports by delay duration under **>1.0 inch precipitation**.
 
@@ -269,5 +269,80 @@ This bar chart ranks airports by delay duration under **>1.0 inch precipitation*
 
 
 
+## Hypothesis Testing
+
+To investigate statistically significant patterns behind flight delays, four hypothesis tests were conducted. These tests aimed to identify the impact of weather, airport traffic, and cancellations on average departure delays.
+
+---
+
+### **Test 1: Impact of Rainfall on Departure Delay**
+
+![Figure 1 – Delay by Precipitation](outputs/indir%20(9).png)
+
+- **Objective**: Assess whether average delays differ significantly between rainy days (precipitation > 1.0 inch) and dry days.
+- **Test Used**: Mann–Whitney U Test (non-parametric)
+- **Sample Size**:  
+  - Rainy Days: 45,506 flights  
+  - Dry Days: 49,342 flights  
+- **Normality**: Both groups failed the Shapiro-Wilk test  
+- **Variance**: Levene’s Test p = 1.48e⁻¹² ⇒ variances are unequal  
+- **Result**: p-value = **0.00015**
+
+**Conclusion**:  
+There is a statistically significant difference in delays between rainy and dry days. Delays tend to be higher during rainy days, confirming the operational impact of precipitation on flight punctuality.
+
+---
+
+### **Test 2: Airport Traffic vs. Departure Delay**
+
+![Figure 2 – Delay vs Flight Count](outputs/indir%20(11).png)
+
+- **Objective**: Determine whether airports with higher flight volume experience greater average delays.
+- **Test Used**: Pearson Correlation
+- **Result**:  
+  - Pearson r = 0.0024  
+  - p-value = 0.9657
+
+**Conclusion**:  
+There is **no significant correlation** between the number of flights and average delay. High traffic volume alone does not predict increased delays. Infrastructure efficiency likely plays a larger role.
+
+---
+
+### **Test 3: Passenger Load vs. Departure Delay**
+
+![Figure 3 – Passenger Load Delay Correlation](outputs/indir%20(10).png)
+
+- **Objective**: Assess if higher passenger loads are linked with longer delays.
+- **Test Used**: Pearson Correlation  
+- **Result**:  
+  - Pearson r = 0.0023  
+  - p-value = 0.9667
+
+**Conclusion**:  
+There is **no significant linear correlation** between passenger volume and departure delays. Delay patterns are more influenced by operational factors than passenger numbers.
+
+---
+
+### **Test 4: Cancellation vs. Departure Delay**
+
+![Figure 4 – Cancelled Flight Rate](outputs/indir%20(2).png)
+
+- **Objective**: Determine if flights that are eventually cancelled show significantly higher average delays before cancellation.
+- **Test Used**: Welch’s t-test  
+- **Result**:  
+  - t-statistic = -41.166  
+  - p-value < 0.001
+
+**Conclusion**:  
+Cancelled flights show **significantly higher departure delays** prior to cancellation. These results support using delay metrics as early indicators of cancellation risk.
+
+---
+
+### **Figure 5: Diverted Flight Rate**
+
+![Figure 5 – Diverted Flight Rate](outputs/indir%20(7).png)
+
+**Insight**:  
+Approximately **15.8% of flights** were diverted, highlighting a substantial source of operational disruption that may tie into weather, traffic, or emergency protocols.
 
 
