@@ -327,7 +327,7 @@ There is **no significant linear correlation** between passenger volume and depa
 
 ![Figure 4 – Cancelled Flight Rate](outputs/indir%20(1).png)
 
-![Figure 5 – Diverted Flight Rate](outputs/indir%20(12).png)
+![Figure 5 – Diverted Flight Rate](outputs/indir%20(13).png)
 
 - **Objective**: Determine if flights that are eventually cancelled show significantly higher average delays before cancellation.
 - **Test Used**: Welch’s t-test  
