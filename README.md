@@ -327,6 +327,8 @@ There is **no significant linear correlation** between passenger volume and depa
 
 ![Figure 4 – Cancelled Flight Rate](outputs/indir%20(1).png)
 
+![Figure 5 – Diverted Flight Rate](outputs/indir%20(12).png)
+
 - **Objective**: Determine if flights that are eventually cancelled show significantly higher average delays before cancellation.
 - **Test Used**: Welch’s t-test  
 - **Result**:  
@@ -338,11 +340,11 @@ Cancelled flights show **significantly higher departure delays** prior to cancel
 
 ---
 
-### **Figure 5: Diverted Flight Rate**
 
 ![Figure 5 – Diverted Flight Rate](outputs/indir%20(7).png)
 
 **Insight**:  
 Approximately **15.8% of flights** were diverted, highlighting a substantial source of operational disruption that may tie into weather, traffic, or emergency protocols.
 
-
+**Conclusion**:  
+Cancelled flights show **significantly higher departure delays** prior to cancellation. These results support using delay metrics as early indicators of cancellation risk.
