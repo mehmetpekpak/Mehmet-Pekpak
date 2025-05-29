@@ -152,51 +152,120 @@ Delay data exhibited significant **right skew**.
 - **Diverted Flights**: Roughly **15.8% of flights** were diverted, as shown in the pie chart visualization.
 
 ---
+
 ## Data Visualization
 
-### Figure 1: Departure Delay by Time of Day
+To gain further insight into flight delays, we visualized key relationships and airport-specific patterns. Below are summaries of the generated figures and the interpretations derived from them.
+
+---
+
+### **Figure 1: Departure Delay by Time of Day**
+
 ![Departure Delay by Time of Day](outputs/indir%20(1).png)
-- Afternoon flights show the highest average delays, likely due to cumulative scheduling and airport congestion.
 
-### Figure 2: Top 10 Departure Cities by Avg Delay
+This line chart shows how departure delays vary throughout the day.
+
+- **Insight**: Flights departing in the **afternoon** experience the **highest average delays**, indicating possible cumulative congestion as the day progresses.
+
+---
+
+### **Figure 2: Top 10 Departure Cities by Avg Delay**
+
 ![Top Delay Cities](outputs/indir%20(2).png)
-- Smaller airports such as Alpena, MI and Pellston, MI experience longer average delays, suggesting regional inefficiencies.
 
-### Figure 3: Average Delay by Cause
-![Delay by Cause](outputs/indir%20(3).png)
-- Last aircraft arrival and NAS delays contribute the most to overall delays.
+This horizontal bar chart displays the top cities with the highest average departure delay.
 
-### Figure 4: Delay vs Precipitation
-![Precipitation Impact](outputs/indir%20(4).png)
-- Surprisingly, low precipitation (0–0.1 inch) shows the highest average delays, possibly linked to indirect weather-related disruptions.
+- **Insight**: Smaller regional airports like **Alpena, MI** and **Pellston, MI** have significantly higher delays, possibly due to limited infrastructure or low flight frequency buffers.
 
-### Figure 5: Delay Components by Top 10 Airports
+---
+
+### **Figure 3: Average Delay Duration by Cause**
+
+![Delay Causes](outputs/indir%20(3).png)
+
+This bar chart compares the average delay times attributed to various causes.
+
+- **Insight**: **NAS (National Airspace System)** delays and **Late Arrival of Aircraft** dominate the overall delay structure, suggesting upstream propagation of scheduling inefficiencies.
+
+---
+
+### **Figure 4: Average Departure Delay by Precipitation Level**
+
+![Weather Impact](outputs/indir%20(4).png)
+
+This chart examines the relationship between precipitation levels and departure delay.
+
+- **Insight**: Surprisingly, the **highest delays occurred under low precipitation conditions (0–0.1 inches)**, hinting at non-linear relationships or hidden confounders like visibility or traffic volume.
+
+---
+
+### **Figure 5: Average Delay Components by Top 10 Airports**
+
 ![Airport Delay Breakdown](outputs/indir%20(5).png)
-- ATL and MCO consistently show high delays across multiple causes.
 
-### Figure 6: Delay vs Flight Volume
+A grouped bar chart shows delays by type at the busiest airports.
+
+- **Insight**: **ATL** and **MCO** display consistently high delays, especially due to NAS and carrier issues, reflecting high operational pressure in major hubs.
+
+---
+
+### **Figure 6: Average Departure Delay vs. Flight Volume**
+
 ![Delay vs Flight Volume](outputs/indir%20(6).png)
-- High-volume airports tend to have lower average delays, suggesting better operational efficiency.
 
-### Figure 7: Diverted Flight Rate
+This scatter plot shows average delays against number of flights per airport.
+
+- **Insight**: A **weak negative correlation** suggests that **larger airports** may manage congestion better through more robust infrastructure and scheduling systems.
+
+---
+
+### **Figure 7: Diverted Flight Rate**
+
 ![Diverted Flights Pie](outputs/indir%20(7).png)
-- Around 15.8% of flights are diverted, highlighting a significant operational impact.
 
-### Figure 8: Delay by Airline
-![Airline Delay Comparison](outputs/indir%20(8).png)
-- JetBlue Airways and Delta Air Lines Inc. are among the most delayed carriers on average.
+This pie chart illustrates the percentage of diverted flights.
 
-### Figure 9: Daily Average Departure Delay
-![Daily Delay Pattern](outputs/indir%20(9).png)
-- Departure delays vary across the year with spikes around peak months.
+- **Insight**: **15.8% of all flights were diverted**, indicating a substantial operational risk factor that may be weather- or congestion-related.
 
-### Figure 10: Delay by Distance Category
-![Distance Delay Analysis](outputs/indir%20(10).png)
-- Short and medium-haul flights exhibit the most extreme delays.
+---
 
-### Figure 11: Long Delays in Heavy Rain
-![Heavy Rain Delay](outputs/indir%20(11).png)
-- APN and PLN airports show extreme delays during rainfall >1.0 inch.
+### **Figure 8: Average Departure Delay by Airline**
+
+![Airline Delays](outputs/indir%20(8).png)
+
+This bar chart compares delay averages across major airlines.
+
+- **Insight**: Airlines such as **JetBlue** and **American Airlines** show higher delays, potentially due to tighter turnarounds, regional route structures, or maintenance scheduling issues.
+
+---
+
+### **Figure 9: Daily Average Departure Delay Trend**
+
+![Daily Delay Trend](outputs/indir%20(9).png)
+
+This time series tracks daily average delay fluctuations across the year.
+
+- **Insight**: Spikes in **early spring and late fall** indicate **seasonal bottlenecks**, likely tied to holiday or weather-related congestion.
+
+---
+
+### **Figure 10: Departure Delay by Distance Category**
+
+![Distance Delay Boxplot](outputs/indir%20(10).png)
+
+A box plot of departure delay segmented by flight distance.
+
+- **Insight**: Short and medium haul flights exhibit **more extreme outliers**, suggesting higher unpredictability in shorter connections.
+
+---
+
+### **Figure 11: Top 10 Airports with Long Delays During Heavy Rain**
+
+![Heavy Rain Delays](outputs/indir%20(11).png)
+
+This bar chart ranks airports by delay duration under **>1.0 inch precipitation**.
+
+- **Insight**: Airports like **APN**, **PLN**, and **BOI** suffer extreme delays under heavy rain, revealing vulnerability in adverse weather conditions.
 
 
 
