@@ -335,13 +335,6 @@ There is **no significant linear correlation** between passenger volume and depa
   - t-statistic = -41.166  
   - p-value < 0.001
 
-**Conclusion**:  
-Cancelled flights show **significantly higher departure delays** prior to cancellation. These results support using delay metrics as early indicators of cancellation risk.
-
----
-
-
-![Figure 5 – Diverted Flight Rate](outputs/indir%20(7).png)
 
 **Insight**:  
 Approximately **15.8% of flights** were diverted, highlighting a substantial source of operational disruption that may tie into weather, traffic, or emergency protocols.
