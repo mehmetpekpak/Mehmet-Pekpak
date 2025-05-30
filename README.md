@@ -516,7 +516,7 @@ This outcome confirms that the unsupervised clustering successfully differentiat
 
 This project demonstrates the potential of combining unsupervised learning with environmental and operational data to uncover meaningful patterns in flight delays. While the current implementation focuses on clustering historical flight data using PCA and KMeans, there are numerous promising directions for future extension and application.
 
-#### ✈ Real-Time Delay Prediction
+####  Real-Time Delay Prediction
 
 One of the most impactful extensions would be transforming this project into a **real-time predictive system**. By training supervised models (e.g., Random Forests, XGBoost) using the clustered labels as targets, we can forecast whether a new flight — given its environmental and scheduling conditions — is likely to belong to a "high delay risk" cluster. This would support:
 
