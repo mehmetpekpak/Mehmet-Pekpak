@@ -412,7 +412,7 @@ The PCA scatter plot visualizes clusters:
 
 ---
 
-### 🔟 Figure 2 — Top 10 Most Delayed Flights  
+###  Figure 2 — Top 10 Most Delayed Flights  
 ![Top Delayed Flights](outputs/sample.png)
 
 Flights with extreme delays (up to **2414 minutes**) are mostly assigned to **Cluster 0**.
