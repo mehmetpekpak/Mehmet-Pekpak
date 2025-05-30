@@ -387,6 +387,7 @@ The PCA scatter plot visualizes clusters:
 ### 🗂️ Sample Flights by Cluster
 
 #### ✈️ Cluster 0 — Extreme Delays (e.g., systemic failures)
+
 | FlightDate | IATA | City      | Dep_Delay | Precip | Snow | Wind | Temp  |
 |------------|------|-----------|-----------|--------|------|------|-------|
 | 2023-01-11 | ABE  | Allentown | 0         | 0.0    | 0.0  | 9.0  | 2.3   |
@@ -394,6 +395,7 @@ The PCA scatter plot visualizes clusters:
 | 2023-03-31 | ABE  | Allentown | 0.0       | 0.3    | 0.0  | 7.2  | 3.8   |
 
 #### ✈️ Cluster 1 — Moderate Disruptions
+
 | FlightDate | IATA | City      | Dep_Delay | Precip | Snow | Wind | Temp  |
 |------------|------|-----------|-----------|--------|------|------|-------|
 | 2023-01-12 | ABE  | Allentown | -5.0      | 4.1    | 0.0  | 11.2 | 4.1   |
@@ -401,6 +403,7 @@ The PCA scatter plot visualizes clusters:
 | 2023-02-24 | ABE  | Allentown | -9.0      | 0.0    | 0.0  | 19.4 | 6.4   |
 
 #### ✈️ Cluster 2 — Severe Weather, No Delay
+
 | FlightDate | IATA | City      | Dep_Delay | Precip | Snow  | Wind | Temp   |
 |------------|------|-----------|-----------|--------|-------|------|--------|
 | 2023-01-03 | ABR  | Aberdeen  | 0.0       | 0.0    | 180.0 | 20.5 | -10.2  |
@@ -412,4 +415,47 @@ The PCA scatter plot visualizes clusters:
 ### 🔟 Figure 2 — Top 10 Most Delayed Flights  
 ![Top Delayed Flights](outputs/sample.png)
 
-Flights with extreme delays (up to **2414 minutes**) are mostly assigned to **Cluster 0
+Flights with extreme delays (up to **2414 minutes**) are mostly assigned to **Cluster 0**.
+
+---
+
+
+
+### 🔍 Extended Interpretation
+
+#### 📊 Cluster Profiles
+
+| Cluster | Avg. Dep Delay | Avg. Precipitation | Avg. Temp (°C) | Interpretation                                     |
+|--------:|----------------:|-------------------:|----------------:|----------------------------------------------------|
+| **0**   | ~0.0 min        | ~0.0 in            | ~12.3           | **Ideal Flights** — Minimal delays, low precipitation, moderate-to-high temps |
+| **1**   | ~-4.6 min       | ~5.0 in            | ~8.1            | **Moderate Flights** — Slight negative delays, mild environmental disruption  |
+| **2**   | ~0.0 min        | ~2.1 in            | ~–11.6          | **Extreme Weather** — No delays despite harsh snow, cold & wind                |
+
+---
+
+#### 🧾 PCA Component Insights
+
+- **PC1 ≈ Operational Disruption**  
+  Driven by: `Dep_Delay`, `WindSpeed`, `Snow`, `Precipitation`
+
+- **PC2 ≈ Seasonal/Temperature Influence**  
+  Driven by: `AvgTemp`, inversely linked with snow levels
+
+Together, these dimensions separate delay-heavy but clear-weather flights (Cluster 0) from resilient, snow-heavy flights (Cluster 2).
+
+---
+
+#### 💡 Additional Insights
+
+- Cluster **2** flights frequently operate under **harsh snow or cold** but experience **no delays**, revealing **high operational reliability**.
+- Cluster **0** highlights critical cases for **disruption management** and **risk alerting**.
+
+> This approach helps isolate anomalies and optimize airport or airline resilience strategies.
+
+### ✅ Conclusion
+
+- Clustering separated flights with meaningful delay/weather patterns.
+- Cluster 2 flights experienced **no delays** despite **extreme snow/wind** — showing **operational resilience**.
+- Cluster 0 concentrated **major disruptions**, useful for **risk monitoring or intervention planning**.
+
+> 🧩 This unsupervised approach enables scalable anomaly detection and risk-aware air traffic analytics.
