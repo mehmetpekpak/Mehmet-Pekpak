@@ -1,4 +1,4 @@
-# Airport Placement Optimization- DSA210 Project
+# Airport Optimization- DSA210 Project
 
 
 ## Project Overview
