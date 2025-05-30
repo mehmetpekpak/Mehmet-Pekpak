@@ -341,3 +341,75 @@ Approximately **15.8% of flights** were diverted, highlighting a substantial sou
 
 **Conclusion**:  
 Cancelled flights show **significantly higher departure delays** prior to cancellation. These results support using delay metrics as early indicators of cancellation risk.
+
+
+
+## 🧠 Machine Learning Analysis
+
+To uncover hidden patterns in flight delay conditions, we applied unsupervised machine learning techniques — **Principal Component Analysis (PCA)** and **KMeans Clustering** — on standardized environmental and delay variables.
+
+---
+
+### 📌 Methodology
+
+- **Selected Features**:
+  - `Dep_Delay`: Departure delay (min)
+  - `Arr_Delay`: Arrival delay (min)
+  - `Precipitation`, `Snow`, `WindSpeed`, `AvgTemp`
+
+- **Pipeline**:
+  - All features were **standardized**.
+  - **PCA** reduced them to 2 components explaining ~93% of total variance.
+  - **KMeans** clustered flights into **3 operational categories**.
+
+---
+
+### 🎯 Cluster Interpretation
+
+| Cluster | Description                      | Pattern |
+|---------|----------------------------------|---------|
+| **0**   | Extreme delays                   | Delay > 2000 min, often dry and calm weather |
+| **1**   | Moderate delays                  | Mild environmental disruption (e.g. wind, light rain) |
+| **2**   | Stable flights                   | Normal ops, low delay, extreme weather possible |
+
+---
+
+### 📈 Figure 1 — PCA Clustering of Flights  
+![PCA KMeans Clustering](outputs/kmeans.png)
+
+The PCA scatter plot visualizes clusters:
+- 🔴 **Cluster 0** (rightmost): Severe delays.
+- 🔵 **Cluster 1** (center): Moderate delays.
+- 🟢 **Cluster 2** (leftmost): Normal flights, even with adverse weather.
+
+---
+
+### 🗂️ Sample Flights by Cluster
+
+#### ✈️ Cluster 0 — Extreme Delays (e.g., systemic failures)
+| FlightDate | IATA | City      | Dep_Delay | Precip | Snow | Wind | Temp  |
+|------------|------|-----------|-----------|--------|------|------|-------|
+| 2023-01-11 | ABE  | Allentown | 0         | 0.0    | 0.0  | 9.0  | 2.3   |
+| 2023-01-11 | ABE  | Allentown | -11.0     | 0.0    | 0.0  | 9.0  | 2.3   |
+| 2023-03-31 | ABE  | Allentown | 0.0       | 0.3    | 0.0  | 7.2  | 3.8   |
+
+#### ✈️ Cluster 1 — Moderate Disruptions
+| FlightDate | IATA | City      | Dep_Delay | Precip | Snow | Wind | Temp  |
+|------------|------|-----------|-----------|--------|------|------|-------|
+| 2023-01-12 | ABE  | Allentown | -5.0      | 4.1    | 0.0  | 11.2 | 4.1   |
+| 2023-01-22 | ABE  | Allentown | 0.0       | 9.1    | 0.0  | 10.1 | 2.1   |
+| 2023-02-24 | ABE  | Allentown | -9.0      | 0.0    | 0.0  | 19.4 | 6.4   |
+
+#### ✈️ Cluster 2 — Severe Weather, No Delay
+| FlightDate | IATA | City      | Dep_Delay | Precip | Snow  | Wind | Temp   |
+|------------|------|-----------|-----------|--------|-------|------|--------|
+| 2023-01-03 | ABR  | Aberdeen  | 0.0       | 0.0    | 180.0 | 20.5 | -10.2  |
+| 2023-01-04 | ABR  | Aberdeen  | 0.0       | 0.0    | 180.0 | 23.0 | -6.2   |
+| 2023-02-22 | ABR  | Aberdeen  | 0.0       | 4.3    | 200.0 | 40.3 | -17.4  |
+
+---
+
+### 🔟 Figure 2 — Top 10 Most Delayed Flights  
+![Top Delayed Flights](outputs/sample.png)
+
+Flights with extreme delays (up to **2414 minutes**) are mostly assigned to **Cluster 0
