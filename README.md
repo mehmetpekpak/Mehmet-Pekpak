@@ -394,7 +394,7 @@ The PCA scatter plot visualizes clusters:
 | 2023-01-11 | ABE  | Allentown | -11.0     | 0.0    | 0.0  | 9.0  | 2.3   |
 | 2023-03-31 | ABE  | Allentown | 0.0       | 0.3    | 0.0  | 7.2  | 3.8   |
 
-#### ✈️ Cluster 1 — Moderate Disruptions
+####  Cluster 1 — Moderate Disruptions
 
 | FlightDate | IATA | City      | Dep_Delay | Precip | Snow | Wind | Temp  |
 |------------|------|-----------|-----------|--------|------|------|-------|
@@ -402,7 +402,7 @@ The PCA scatter plot visualizes clusters:
 | 2023-01-22 | ABE  | Allentown | 0.0       | 9.1    | 0.0  | 10.1 | 2.1   |
 | 2023-02-24 | ABE  | Allentown | -9.0      | 0.0    | 0.0  | 19.4 | 6.4   |
 
-#### ✈️ Cluster 2 — Severe Weather, No Delay
+####  Cluster 2 — Severe Weather, No Delay
 
 | FlightDate | IATA | City      | Dep_Delay | Precip | Snow  | Wind | Temp   |
 |------------|------|-----------|-----------|--------|-------|------|--------|
