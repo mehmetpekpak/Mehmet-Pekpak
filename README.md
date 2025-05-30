@@ -201,7 +201,7 @@ This chart examines the relationship between precipitation levels and departure 
 
 ### **Figure 5: Average Delay Components by Top 10 Airports**
 
-![Airport Delay Breakdown](outputs/indir%20(11).png)
+![Airport Delay Breakdown](outputs/indir%20(4).png)
 
 A grouped bar chart shows delays by type at the busiest airports.
 
@@ -211,7 +211,7 @@ A grouped bar chart shows delays by type at the busiest airports.
 
 ### **Figure 6: Average Departure Delay vs. Flight Volume**
 
-![Delay vs Flight Volume](outputs/indir%20(4).png)
+![Delay vs Flight Volume](outputs/indir%20(11).png)
 
 This scatter plot shows average delays against number of flights per airport.
 
